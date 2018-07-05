@@ -30,6 +30,8 @@ app.post('/register', register.handleRegister(db, bcrypt));
 
 app.get('/profile/:id', profile.handleProfile(db));
 
+app.post('/imageUrl', submissions.handleFaceRecognition);
+
 app.put('/image', submissions.handleImageSubmission(db));
 
 app.listen(3001, () => {
