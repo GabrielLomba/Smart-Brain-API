@@ -14,7 +14,7 @@ const handleFaceRecognition = (req, res) => {
 
 const handleImageSubmission = (db) => (req, res) => {
   const { id } = req.body;
-  db('user').where('id', '=', id)
+  db('users').where('id', '=', id)
     .increment('entries', 1)
     .returning('entries')
     .then(entries => {
