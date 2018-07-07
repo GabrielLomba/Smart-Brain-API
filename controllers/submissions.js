@@ -24,7 +24,10 @@ const handleImageSubmission = (db) => (req, res) => {
         res.status(404).json('User not found.');
       }
     })
-    .catch(() => res.status(500).json('unable to increment entries'));
+    .catch(err => {
+      console.error(err);
+      res.status(500).json('unable to increment entries')
+    });
 };
 
 module.exports = {

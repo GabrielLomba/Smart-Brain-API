@@ -30,7 +30,10 @@ const handleSignIn = (db, bcrypt) => (req, res) => {
         res.status(401).json('Invalid username or password');
       }
     })
-    .catch(() => res.status(500).json('error logging in'));
+    .catch(err => {
+      console.error(err);
+      res.status(500).json('error logging in')
+    });
   }
 };
 

@@ -7,7 +7,10 @@ const handleProfile = (db) => (req, res) => {
       } else {
         res.status(404).json('User not found.');
       }
-    }).catch(() => res.status(500).json('error getting user.'));
+    }).catch(err => {
+      console.error(err);
+      res.status(500).json('error getting user.')
+    });
 };
 
 module.exports = {

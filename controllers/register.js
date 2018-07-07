@@ -39,7 +39,8 @@ const handleRegister = (db, bcrypt) => (req, res) => {
                   email: loginEmail[0],
                 }).then(response => {
                   res.status(201).json(response);
-                }).catch(() => {
+                }).catch(err => {
+                  console.error(err);
                   res.status(400).json('unable to register');
                 })
             })
