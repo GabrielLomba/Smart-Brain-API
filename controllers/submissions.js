@@ -1,7 +1,7 @@
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
-  apiKey: 'f541ff5770dd47ccb8c47f05c93b8811'
+  apiKey: process.env.CLARIFAI_API_KEY
 });
 
 const handleFaceRecognition = (req, res) => {
